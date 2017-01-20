@@ -1,6 +1,6 @@
 <div class = "recipe-card">
   <div class = "recipe-top">
-    <h3 class = "recipe-title text-center"><%= recipe.recipetitle %></h3>
+    <h3 class = "recipe-title text-center"><%= link_to recipe.recipetitle, recipe %></h3>
     <p  class = "owner-name text-center">by: <%= @user.name %></p>
   </div>
   <div class = "recipe-bar text-center">
@@ -8,10 +8,10 @@
     <span class = "recipe-serves">serves: <%= recipe.serves %></span>
   </div>
   <div class = "recipe-pic">
-    <% if(recipe.imageurl != nil) %>
-      <%= image_tag(recipe.imageurl, class: "recipe-img")%>
-    <% else %>
+    <% if(recipe.imageurl == nil || recipe.imageurl == "") %>
       <%= image_tag("http://i.huffpost.com/gen/1182651/images/o-HEALTHY-COOKING-facebook.jpg" , class: "recipe-img") %>
+    <% else %>
+      <%= image_tag(recipe.imageurl, class: "recipe-img")%>
     <% end %>
     <!--<img src = "" alt= "" class = "recipe-img">-->
   </div>

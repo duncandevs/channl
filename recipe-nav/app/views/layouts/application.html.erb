@@ -6,6 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <% if logged_in? %>
+      <% @user = current_user %>
       <%= render 'layouts/header_login' %>
     <% else %>
       <%= render 'layouts/header' %>

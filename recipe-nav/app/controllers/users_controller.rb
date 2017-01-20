@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @recipes = @user.recipes
   end
   def create
@@ -24,4 +24,10 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+
 end
