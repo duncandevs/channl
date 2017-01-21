@@ -9,7 +9,7 @@
       <img src = "https://yt3.ggpht.com/-qwXnoxAmSnM/AAAAAAAAAAI/AAAAAAAAAAA/iQgIQwT_SdM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg"
         class= "header-el" id="profilepic">
       <h3 class = "header-el" id="profilename"><%= @user.name %></h3>
-      <%= link_to "Log out", logout_path, method: "delete" %>
+      <h3 class = "header-el logout"><%= link_to "log out", logout_path, method: "delete" %></h3>
     </div>
   </div>
 </header>

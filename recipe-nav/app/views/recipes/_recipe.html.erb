@@ -4,8 +4,8 @@
     <p  class = "owner-name text-center">by: <%= @user.name %></p>
   </div>
   <div class = "recipe-bar text-center">
-    <span class = "recipe-time">time: <%= recipe.time %></span>
-    <span class = "recipe-serves">serves: <%= recipe.serves %></span>
+    <%= image_tag("icons/time.png", size: "18", class: "time-img") %><span class = "recipe-time"><%= recipe.time %></span>
+    <%= image_tag("icons/user-small.png", size: "17", class: "serve-img") %><span class = "recipe-serves"><%= recipe.serves %></span>
   </div>
   <div class = "recipe-pic">
     <% if(recipe.imageurl == nil || recipe.imageurl == "") %>

@@ -25,10 +25,12 @@ body{
   width:100%;
   background-color:red;
 }
+/* STYLING FOR RECIPE INFO BAR */
 .recipe-time,.recipe-serves{
+  float:left;
+  margin-left:25px;
   color:#42dab4;
   font-weight:bold;
-  margin-right:20px;
 }
 .recipe-img{
   width:100%;
@@ -43,4 +45,13 @@ body{
   margin-left:30px;
   padding-top:10px;
   border-radius:0px;
+}
+.time-img{
+  float:left;
+  margin-left:20px;
+  margin-right:0px;
+}
+.serve-img{
+  float:left;
+  margin-left:50px;
 }

@@ -1,9 +1,16 @@
-
+body{
+    background-image:    url('http://blog.zola.com/wp-content/uploads/2014/11/cooking-1200x675.jpg') !important;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position:  '#';
+  /*background-color:#dcdfde !important;*/
+}
 .row-recipe{
   margin-top:50px;
   width:932px;
   height:536px;
   background-color:white;
+  margin-bottom:50px;
 }
 .left-panel{
   float:left;
@@ -38,11 +45,6 @@
   color:white;
   font-style: italic;
 }
-.recipe-info{
-  font-size:14px;
-  font-weight:bold;
-  color:#42dab4;
-}
 .ingredients-container{
 }
 .ingredients-title{
@@ -67,6 +69,10 @@
   font-weight:bold;
   color:#ff5400;
 }
+.directions-top-content{
+  height: 375px;
+  background-color:'#';
+}
 .directions-list{
   margin-top:31px;
 }
@@ -76,7 +82,6 @@
   font-weight:bold;
 }
 .startcooking{
-  margin-top:60px;
   color:white;
   font-weight:bold;
 }
@@ -125,4 +130,30 @@
 }
 .highlight{
   background-color:#E7F76D;
+}
+/* STYLING FOR RECIPE INFO BAR */
+.recipe-info{
+  font-size:14px;
+  font-weight:bold;
+  color:#42dab4;
+  margin-bottom:30px;
+}
+.recipe-time.recipe-serves{
+  float:left;
+  margin-left:25px;
+  color:#42dab4;
+  font-weight:bold;
+}
+.recipe-img{
+  width:100%;
+  height:100%;
+}
+.time-img{
+  float:left;
+  margin-left:0px;
+  margin-right:0px;
+}
+.serve-img{
+  float:left;
+  margin-left:50px;
 }
