@@ -1,0 +1,60 @@
+<%= javascript_tag do %>
+      rb_channeltitle = "<%= @channel.name %>"
+      rb_playlistid = "<%= @channel.playlist_id %>"
+<% end %>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src = "https://www.youtube.com/iframe_api"></script>
+<%= stylesheet_link_tag "channels" %>
+<%= javascript_include_tag "channels" %>
+</head>
+<div class = "topnav">
+  <p class = "header-title"><%= @channel.name %></p>
+</div>
+<div class = "row player-wrap">
+  <div class = "container" id="video-player">
+    <div class ="row">
+      <div class = "col-md-9" id="player"></div>
+      <div class = "col-md-3 scroll" id="video-list">
+    <!--<div class = "video-wrap">
+          <div class = "thumb"><img src = "http://i3.ytimg.com/vi/g5AKVbx2M38/hqdefault.jpg" class = "thumbimg"></div>
+          <div class = "title col-md-6">HOUSE TOUR - LUXURY JUNGLE...</div>
+        </div>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class = "container bottom">
+  <div class = "row">
+      <h6 class = "now-playing">NOW PLAYING</h6>
+      <h3 class = "title-playing">THIS IS THE TITLE OF THE VIDEO</h3>
+  </div>
+</div><!-- end container-->
+<div class = "container">
+  <div class = "row" id = "channel-content">
+    <div class = "channel-card" id="music">
+      <img src = "https://ksassets.timeincuk.net/wp/uploads/sites/55/2016/06/2016JamesBlake_Sat_Glastonbury_2016_High_Res_BB-250616-1-630x418.jpg" class="channel-img"></br>
+      <h2 class = "channel-title">music</h2>
+  </div>
+  <div class = "channel-card">
+    <img src = "https://foodergolove.files.wordpress.com/2013/06/dai1.jpg" class="channel-img"></br>
+    <h2 class = "channel-title" id="channel-id">culture & people</h2>
+  </div>
+  <div class = "channel-card">
+    <img src = "http://static.trustedreviews.com/94/0000363f2/7c66_orh370w630/Ted-talks-tech-640.jpg" class="channel-img"></br>
+    <h2 class = "channel-title" id="channel-id">talks</h2>
+  </div>
+  <div class = "channel-card">
+    <img src = "https://www.priv.gc.ca/media/1758/drone1.jpg" class="channel-img"></br>
+    <h2 class = "channel-title" id="channel-id">technology</h2>
+  </div>
+  <div class = "channel-card">
+    <img src = "https://s-media-cache-ak0.pinimg.com/originals/a0/0c/12/a00c12c780a2386ba2c262d2b6bd4ace.jpg" class="channel-img"></br>
+    <h2 class = "channel-title" id="channel-id">documentaries</h2>
+  </div>
+</div><!-- end row-->
+</div><!--end container-->
+<!-- REFORMAT THE CHANNELS MENU AS JAVASCRIPT CONTROLLED ELEMENTS SO YOU CAN EASILY ADD NEW CATEGORIES.....REFORMAT IN CLASS STRUCTRE-->
