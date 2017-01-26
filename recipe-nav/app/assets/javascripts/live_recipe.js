@@ -62,7 +62,6 @@ directionsNav(STEPS,token);
 function directionsNav(STEPS,token){
   var array_ingredients = splitToSingleItems(INGREDIENTS);
   var array_directions = splitToSingleItems(STEPS[token].split(" "));
-  console.log(array_directions)
   $cooking_item.html("");
   printDirections(array_directions,array_ingredients,$cooking_item,"highlight");
 
