@@ -1,4 +1,4 @@
-class Channel < ApplicationRecord
+class Channel 
   include ActiveModel::Model
 
   attr_accessor :name, :playlist_id, :video_id
