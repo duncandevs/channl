@@ -53,12 +53,12 @@ function dispCategory(videoArray,categorytitle,playlistid){
   var channeltitle = document.createElement('div');
 
   row.className = "row";
-  row.id = `row-${ROWTITLE}`;
+  row.id = "row-"+ROWTITLE;
   $(".container").append(row);
   channeltitle.innerHTML = ROWTITLE;
   channeltitle.id = playlistid;
   channeltitle.className = "channel-title";
-  $(`#${row.id}`).append(channeltitle);
+  $("#"+row.id).append(channeltitle);
 
   for(var i = 0; i < 4 ; i++){
     var videotitle = VIDEOARRAY[i][0];
@@ -70,13 +70,13 @@ function dispCategory(videoArray,categorytitle,playlistid){
     var divimg   = document.createElement('img');
     var divtitle = document.createElement('div');
 
-    $(`#${row.id}`).append(divwrap);
-    divwrap.setAttribute("url", `${videourl}`);
-    divwrap.setAttribute("type", `${ROWTITLE}`);
-    divwrap.setAttribute("list", `${playlistid}`);
+    $("#"+row.id).append(divwrap);
+    divwrap.setAttribute("url", videourl);
+    divwrap.setAttribute("type", ROWTITLE);
+    divwrap.setAttribute("list", playlistid);
     divwrap.className = "video-wrap";
     divvideo.className = "video";
-    divimg.setAttribute("src",`${thumbnail}`);
+    divimg.setAttribute("src", thumbnail);
     divimg.className = "category-img";
     divtitle.className = "video-title";
     divtitle.innerHTML = videotitle.toLowerCase();
