@@ -1,0 +1,101 @@
+<%= javascript_tag do %>
+      rb_channeltitle = "<%= @channel.name %>"
+      rb_playlistid = "<%= @channel.playlist_id %>"
+      rb_videoid ="<%= @channel.video_id %>"
+<% end %>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src = "https://www.youtube.com/iframe_api"></script>
+<%= stylesheet_link_tag "channels" %>
+<%= javascript_include_tag "channels" %>
+</head>
+<div class = "topnav">
+  <p class = "header-title"><%= @channel.name %></p>
+</div>
+<div class = "row player-wrap">
+  <div class = "container" id="video-player">
+    <div class ="row">
+      <div class = "col-md-9" id="player"></div>
+      <div class = "col-md-3 scroll" id="video-list">
+    <!--<div class = "video-wrap">
+          <div class = "thumb"><img src = "http://i3.ytimg.com/vi/g5AKVbx2M38/hqdefault.jpg" class = "thumbimg"></div>
+          <div class = "title col-md-6">HOUSE TOUR - LUXURY JUNGLE...</div>
+        </div>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class = "container bottom">
+  <div class = "row">
+      <h6 class = "now-playing">NOW PLAYING</h6>
+      <h3 class = "title-playing">THIS IS THE TITLE OF THE VIDEO</h3>
+  </div>
+</div><!-- end container-->
+<div class = "container">
+  <div class = "row" id = "channel-content">
+    <div class = "channel-card" id="PLrESQ_Ih_XDy02Wf925pSxZ5-OV4p8cT0" name = "MUSIC">
+      <img src = "https://ksassets.timeincuk.net/wp/uploads/sites/55/2016/06/2016JamesBlake_Sat_Glastonbury_2016_High_Res_BB-250616-1-630x418.jpg" class="channel-img"></br>
+      <h2 class = "channel-title music">music</h2>
+  </div>
+  <div class = "channel-card" id = "PLrESQ_Ih_XDxcoFeFql3eXtlNBGicq8qt" name = "TALKS">
+    <img src = "http://static.trustedreviews.com/94/0000363f2/7c66_orh370w630/Ted-talks-tech-640.jpg" class="channel-img"></br>
+    <h2 class = "channel-title talks" id="channel-id">talks</h2>
+  </div>
+  <div class = "channel-card" id = "PLrESQ_Ih_XDyum_nmWozpX300ESe6z4mp" name = "TECH">
+    <img src = "https://www.priv.gc.ca/media/1758/drone1.jpg" class="channel-img"></br>
+    <h2 class = "channel-title tech" id="channel-id">technology</h2>
+  </div>
+  <div class = "channel-card" id = "PLrESQ_Ih_XDxBMVh97VjRG9ouKMtGIjLA" name = "TRAVEL">
+    <img src = "https://s-media-cache-ak0.pinimg.com/originals/a0/0c/12/a00c12c780a2386ba2c262d2b6bd4ace.jpg" class="channel-img"></br>
+    <h2 class = "channel-title travel" id="channel-id">travel</h2>
+  </div>
+  <div class = "channel-card" id = "PLrESQ_Ih_XDzoAr7e_FYmZrnVPetKExIV" name = "FOOD">
+    <img src = "https://s-media-cache-ak0.pinimg.com/originals/42/8d/06/428d06d7f80882a8a408c0f9a2a22680.jpg" class="channel-img"></br>
+    <h2 class = "channel-title food" id="channel-id">food</h2>
+  </div>
+  <div class = "channel-card" id = "PLrESQ_Ih_XDypRqFK0RNOZwSWTVjtPHU5" name = "VLOGS">
+    <img src = "https://s-media-cache-ak0.pinimg.com/originals/aa/1d/b6/aa1db67ab66595cd2261ce2f03f97474.jpg" class="channel-img"></br>
+    <h2 class = "channel-title vlogs" id="channel-id">vlogs</h2>
+  </div>
+  <div class = "channel-card" id = "PLrESQ_Ih_XDz6lIwmluaHTkAyGZeGDQE0" name = "CARS">
+    <img src = "http://st.motortrend.com/uploads/sites/5/2016/05/2017-McLaren-570GT-rear-three-quarters-1.jpg" class="channel-img"></br>
+    <h2 class = "channel-title cars" id="channel-id">cars</h2>
+  </div>
+</div><!-- end row-->
+</div><!--end container-->
+<!-- REFORMAT THE CHANNELS MENU AS JAVASCRIPT CONTROLLED ELEMENTS SO YOU CAN EASILY ADD NEW CATEGORIES.....REFORMAT IN CLASS STRUCTRE-->
+
+<%= form_for(@channel, url: channel_path) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :playlist_id %>
+  <%= f.text_field :playlist_id %>
+
+  <%= f.label :video_id %>
+  <%= f.text_field :video_id %>
+  <%= f.submit "insert playlist" %>
+<% end %>
+
+<script>
+var $form = $("form");
+$form.css("display","none");
+var $name = $("#channel_name");
+var $playlist_id = $("#channel_playlist_id");
+
+ $(".channel-card").click(function(){
+   var name = $(this).attr("name");
+   var playlist_id = $(this).attr("id");
+   $name.val(name);
+   $playlist_id.val(playlist_id);
+   $form.submit();
+ })
+ $(".channel-card").hover(function(){
+    $(this).css("color", "#2ecc71");
+    }, function(){
+    $(this).css("color", "black");
+});
+</script>
