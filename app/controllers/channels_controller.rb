@@ -7,7 +7,7 @@ class ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
   end
   def show
-    redirect_to 'index'
+    redirect_to ''
   end
   private
   # security feature to prevent injections the would allow admin privelages
