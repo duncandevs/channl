@@ -1,3 +1,4 @@
+//make heroku ready
 $(document).ready(function(){
 const APIKEY =  'AIzaSyB9-C6isL_8dRIskc8JN2HXV8WttDD7Fws';
 // defines a class Category
